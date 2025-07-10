@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ArtigosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ARTIGO">
+          <Key>
+            <PropertyRef Name="idArtigo" />
+          </Key>
+          <Property Name="idArtigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dataHora" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="autor" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="texto" Type="text" Nullable="false" />
+          <Property Name="ordemRelevancia" Type="int" Nullable="false" />
+          <Property Name="idPagina" Type="int" Nullable="false" />
+          <Property Name="tema" Type="nvarchar" MaxLength="50" />
+          <Property Name="subTema" Type="nvarchar" MaxLength="50" />
+          <Property Name="ativo" Type="bit" />
+          <Property Name="urlVideo" Type="nvarchar(max)" />
+          <Property Name="urlFoto" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="ArtigosModelStoreContainer">
+          <EntitySet Name="ARTIGO" EntityType="Self.ARTIGO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ArtigosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ARTIGO">
+          <Key>
+            <PropertyRef Name="idArtigo" />
+          </Key>
+          <Property Name="idArtigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dataHora" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="autor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="texto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordemRelevancia" Type="Int32" Nullable="false" />
+          <Property Name="idPagina" Type="Int32" Nullable="false" />
+          <Property Name="tema" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subTema" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ativo" Type="Boolean" />
+          <Property Name="urlVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urlFoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ArtigosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ARTIGO" EntityType="Self.ARTIGO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ArtigosModelStoreContainer" CdmEntityContainer="ArtigosEntities">
+          <EntitySetMapping Name="ARTIGO">
+            <EntityTypeMapping TypeName="ArtigosModel.ARTIGO">
+              <MappingFragment StoreEntitySet="ARTIGO">
+                <ScalarProperty Name="idArtigo" ColumnName="idArtigo" />
+                <ScalarProperty Name="dataHora" ColumnName="dataHora" />
+                <ScalarProperty Name="autor" ColumnName="autor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="ordemRelevancia" ColumnName="ordemRelevancia" />
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="tema" ColumnName="tema" />
+                <ScalarProperty Name="subTema" ColumnName="subTema" />
+                <ScalarProperty Name="ativo" ColumnName="ativo" />
+                <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+                <ScalarProperty Name="urlFoto" ColumnName="urlFoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

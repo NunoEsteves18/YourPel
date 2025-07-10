@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArtigosModelStoreContainer" CdmEntityContainer="ArtigosEntities">
+    <EntitySetMapping Name="ARTIGO">
+      <EntityTypeMapping TypeName="ArtigosModel.ARTIGO">
+        <MappingFragment StoreEntitySet="ARTIGO">
+          <ScalarProperty Name="idArtigo" ColumnName="idArtigo" />
+          <ScalarProperty Name="dataHora" ColumnName="dataHora" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="texto" ColumnName="texto" />
+          <ScalarProperty Name="ordemRelevancia" ColumnName="ordemRelevancia" />
+          <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="subTema" ColumnName="subTema" />
+          <ScalarProperty Name="ativo" ColumnName="ativo" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="urlFoto" ColumnName="urlFoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
